@@ -1,6 +1,7 @@
 package tml.cuajet.app
 
 import android.util.Log
+import tml.libs.cku.io.LogStreamer
 
 class LogcatStreamer : LogStreamer {
     override fun D(appTag: String, className: String, msg: String?) {

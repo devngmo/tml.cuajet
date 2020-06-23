@@ -1,17 +1,19 @@
+@file:Suppress("unused")
+
 package tml.cuajet.app
 
 import android.app.Activity
 import android.content.Context
 import android.content.pm.PackageManager
-import android.util.Log
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import tml.libs.cku.io.StaticLogger
 
 
 class AppUtils {
     companion object {
-        const val TAG = "AppUtils"
-        const val REQUEST_CODE_REQUEST_PERMISSION = 5000
+        private const val TAG = "AppUtils"
+        private const val REQUEST_CODE_REQUEST_PERMISSION = 5000
 
         fun isAllPermissionGranted(grantResults: IntArray): Boolean {
             for (result in grantResults) {
