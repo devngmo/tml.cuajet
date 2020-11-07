@@ -1,7 +1,7 @@
 package tml.cuajet.apis
 
 import tml.cuajet.storages.StorageCloudAPIInterface
-import tml.libs.cku.TaskResultListener
+import tml.libs.cku.event.TaskResultListener
 import java.io.InputStream
 
 class SimpleFileCloudStorageAPI : StorageCloudAPIInterface {

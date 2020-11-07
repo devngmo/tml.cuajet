@@ -4,7 +4,9 @@ package tml.cuajet.app
 
 import android.app.Activity
 import android.content.Context
+import android.content.SharedPreferences
 import android.content.pm.PackageManager
+import android.preference.PreferenceManager
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import tml.libs.cku.io.StaticLogger
@@ -22,6 +24,10 @@ class AppUtils {
             return true
         }
 
+        fun getSettings(context:  Activity): SharedPreferences {
+            return PreferenceManager.getDefaultSharedPreferences(context)
+        }
+
         fun isAllPermissionGranted(
             ctx: Context,
             permissions: Array<String?>
@@ -33,6 +39,11 @@ class AppUtils {
             }
             return true
         }
+
+        /**
+         * check if the app should ask device for missing permissions
+         * Return True: all permissions has been granted
+         */
         fun checkAndAskForPermissionsIfNeed(context: Activity, permissions: Array<String>):Boolean {
             val missingPermissions: MutableList<String> = ArrayList()
             for (p in permissions) {

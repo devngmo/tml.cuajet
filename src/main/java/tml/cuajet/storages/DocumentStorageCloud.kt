@@ -1,6 +1,6 @@
 package tml.cuajet.storages
 
-import tml.libs.cku.TaskResultListener
+import tml.libs.cku.event.TaskResultListener
 import tml.libs.cku.storages.DocumentStorageInterface
 import java.io.InputStream
 

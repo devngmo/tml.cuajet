@@ -5,7 +5,7 @@ package tml.cuajet.storages
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Environment
-import tml.libs.cku.TaskResultListener
+import tml.libs.cku.event.TaskResultListener
 import tml.libs.cku.io.FileUtils
 import tml.libs.cku.io.StaticLogger
 import tml.libs.cku.storages.DocumentStorageInterface

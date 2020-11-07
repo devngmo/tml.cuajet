@@ -1,7 +1,7 @@
 package tml.cuajet.data.documents
 
 import android.content.Context
-import tml.libs.cku.TaskResultListener
+import tml.libs.cku.event.TaskResultListener
 import java.util.*
 import kotlin.concurrent.thread
 
@@ -18,8 +18,7 @@ class DocumentIndexer(val context: Context) {
         val scrollID = UUID.randomUUID().toString()
 
         thread(start=true) {
-
-            val result = DocumentIndexerFilterResult(nHits, scrollID)
+            val result = DocumentIndexerFilterResult(nHits, nHits, scrollID)
             callback.onSuccess(result)
         }
     }

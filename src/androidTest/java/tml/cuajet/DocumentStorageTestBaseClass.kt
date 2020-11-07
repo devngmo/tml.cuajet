@@ -4,7 +4,7 @@ import com.google.gson.Gson
 import com.google.gson.internal.LinkedTreeMap
 import com.google.gson.reflect.TypeToken
 import org.junit.Assert
-import tml.libs.cku.TaskResultListener
+import tml.libs.cku.event.TaskResultListener
 import tml.libs.cku.storages.DocumentStorageInterface
 import java.lang.reflect.Type
 

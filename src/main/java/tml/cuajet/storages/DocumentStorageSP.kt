@@ -1,7 +1,7 @@
 package tml.cuajet.storages
 
 import android.content.SharedPreferences
-import tml.libs.cku.TaskResultListener
+import tml.libs.cku.event.TaskResultListener
 import tml.libs.cku.storages.DocumentStorageInterface
 import java.io.ByteArrayInputStream
 import java.io.InputStream
