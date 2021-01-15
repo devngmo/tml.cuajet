@@ -1,0 +1,11 @@
+<resources>
+
+    <style name="Theme.SHDigiEyes.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.SHDigiEyes.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.SHDigiEyes.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+</resources>

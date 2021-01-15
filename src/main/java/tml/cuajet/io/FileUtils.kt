@@ -2,10 +2,9 @@
 
 package tml.cuajet.io
 
+import android.content.Context
 import android.content.res.AssetManager
-import java.io.BufferedReader
-import java.io.IOException
-import java.io.InputStreamReader
+import java.io.*
 
 class FileUtils {
     companion object {
@@ -41,6 +40,27 @@ class FileUtils {
                 }
             }
             return ""
+        }
+
+        fun appendLines(
+            c: Context?,
+            lines: List<String?>,
+            lineBreak: String?,
+            f: File?,
+            addLineBreakFirst: Boolean
+        ) {
+            try {
+                val fos = FileOutputStream(f, true)
+                val osw = OutputStreamWriter(fos)
+                if (addLineBreakFirst) osw.append(lineBreak)
+                for (i in lines.indices) {
+                    osw.append(lines[i])
+                    if (i < lines.size - 1) osw.append(lineBreak)
+                }
+                osw.close()
+            } catch (e: IOException) {
+                e.printStackTrace()
+            }
         }
     }
 }
