@@ -7,11 +7,4 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <application>
-        <activity
-            android:name=".activities.SimpleTreeEditorActivity"
-            android:label="@string/title_activity_simple_tree_editor"
-		></activity>
-    </application>
-
 </manifest>

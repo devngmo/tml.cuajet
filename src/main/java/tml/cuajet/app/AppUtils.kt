@@ -6,6 +6,7 @@ import android.app.Activity
 import android.content.Context
 import android.content.SharedPreferences
 import android.content.pm.PackageManager
+import android.preference.PreferenceActivity
 import android.preference.PreferenceManager
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -24,7 +25,9 @@ class AppUtils {
             return true
         }
 
-        fun getSettings(context:  Activity): SharedPreferences {
+        @Suppress("DEPRECATION")
+        fun getSettings(context:  Context): SharedPreferences {
+            //TODO: upgrade to androidx
             return PreferenceManager.getDefaultSharedPreferences(context)
         }
 
