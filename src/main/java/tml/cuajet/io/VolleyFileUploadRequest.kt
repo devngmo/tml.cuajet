@@ -36,8 +36,8 @@ open class VolleyFileUploadRequest(
         val byteArrayOutputStream = ByteArrayOutputStream()
         val dataOutputStream = DataOutputStream(byteArrayOutputStream)
         try {
-            if (params != null && params.isNotEmpty()) {
-                processParams(dataOutputStream, params, paramsEncoding)
+            if (params != null && params!!.isNotEmpty()) {
+                processParams(dataOutputStream, params!!, paramsEncoding)
             }
             val data = getByteData() as? Map<String, FileDataPart>?
             if (data != null && data.isNotEmpty()) {
