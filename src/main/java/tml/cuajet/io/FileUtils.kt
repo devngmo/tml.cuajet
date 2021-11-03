@@ -103,6 +103,27 @@ class FileUtils {
                 ex.printStackTrace()
                 return false
             }
+        }
+        
+        fun appendLines(
+            c: Context?,
+            lines: List<String?>,
+            lineBreak: String?,
+            f: File?,
+            addLineBreakFirst: Boolean
+        ) {
+            try {
+                val fos = FileOutputStream(f, true)
+                val osw = OutputStreamWriter(fos)
+                if (addLineBreakFirst) osw.append(lineBreak)
+                for (i in lines.indices) {
+                    osw.append(lines[i])
+                    if (i < lines.size - 1) osw.append(lineBreak)
+                }
+                osw.close()
+            } catch (e: IOException) {
+                e.printStackTrace()
             }
+        }
     }
 }
