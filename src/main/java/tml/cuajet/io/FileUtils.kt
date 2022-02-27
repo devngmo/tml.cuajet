@@ -2,6 +2,7 @@
 
 package tml.cuajet.io
 
+import android.content.Context
 import android.content.res.AssetManager
 import android.util.Log
 import android.util.StateSet
@@ -99,7 +100,7 @@ class FileUtils {
                 return true
             }
             catch (ex: Exception) {
-                Log.e("FileUtils", ex.message)
+                Log.e("FileUtils", "" + ex.message)
                 ex.printStackTrace()
                 return false
             }
