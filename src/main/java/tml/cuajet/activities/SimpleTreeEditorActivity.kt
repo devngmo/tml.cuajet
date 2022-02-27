@@ -12,8 +12,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.content_simple_tree_editor.*
 import tml.cuajet.R
+import tml.cuajet.databinding.ActivitySimpleTreeEditorBinding
 import tml.libs.cku.data.DataHub
 import tml.libs.cku.data.DataHubResponseInterface
 import tml.libs.cku.data.TreeNodeInterface
@@ -28,14 +28,18 @@ class SimpleTreeEditorActivity : AppCompatActivity() {
     lateinit var curNode: TreeNodeInterface
 
     var itemLayoutID = R.layout.treenode_listitem
-
+    lateinit var lvSTENodes: RecyclerView
+    lateinit var binding: ActivitySimpleTreeEditorBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_simple_tree_editor)
-        setSupportActionBar(findViewById(R.id.toolbar))
+        binding = ActivitySimpleTreeEditorBinding.inflate(layoutInflater)
+        val view = binding.root
+        lvSTENodes = binding.root.findViewById(R.id.lvSTENodes)
+        setContentView(view)
+        setSupportActionBar(binding.toolbar)
 
-        findViewById<FloatingActionButton>(R.id.fab).setOnClickListener { view ->
+        binding.fab.setOnClickListener { view ->
             //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
             //   .setAction("Action", null).show()
         }
@@ -45,6 +49,7 @@ class SimpleTreeEditorActivity : AppCompatActivity() {
         DataHub.get(ARG_MODEL_ADAPTER)?.let {
             modelAdapter = it as TreeEditModelAdapter<TreeNodeInterface>
             modelAdapter!!.curNode = modelAdapter!!.root
+
             lvSTENodes.adapter = it.createChildListAdapter()
         }
         if (modelAdapter == null) {
